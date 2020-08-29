@@ -5,7 +5,7 @@ import "./App.scss";
 const App: SFC = () => {
   return (
     <div className="form">
-      <div className="form-text">text</div>
+      <div className="form-text">text hhh 1</div>
       <Button type="dashed">primary</Button>
     </div>
   );

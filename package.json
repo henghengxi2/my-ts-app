@@ -36,22 +36,41 @@
     ]
   },
   "devDependencies": {
+    "@commitlint/cli": "^9.1.2",
+    "@commitlint/config-conventional": "^9.1.2",
     "@types/enzyme": "^3.10.5",
     "@typescript-eslint/eslint-plugin": "^3.7.1",
     "@typescript-eslint/parser": "^3.7.1",
+    "babel-eslint": "^10.1.0",
     "customize-cra": "^1.0.0",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "enzyme-to-json": "^3.5.0",
     "eslint": "^6.8.0",
-    "eslint-plugin-react": "^7.20.5",
-    "prettier": "2.0.5",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.20.6",
+    "eslint-plugin-react-hooks": "^4.1.0",
+    "husky": "^4.2.5",
+    "prettier": "^2.0.5",
     "react-addons-test-utils": "^15.6.2",
     "react-app-rewired": "^2.1.6"
   },
   "jest": {
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "**/*.js": [
+      "prettier --write",
+      "eslint"
     ]
   }
 }
